@@ -261,7 +261,7 @@ class StorageObject(StorageObjectRead, StorageObjectWrite, StorageObjectGlob):
                             self.provider.client.client.mkdir(str(parent))
                         except ResourceAlreadyExists:
                             pass
-                self.provider.client.client.upload_file(str(lpath), str(rpath))
+                self.provider.client.client.upload_file(str(lpath), str(rpath), overwrite=True)
 
         upload(self.local_path())
 
